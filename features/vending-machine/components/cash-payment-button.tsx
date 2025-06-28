@@ -11,8 +11,12 @@ interface CardPaymentButtonProps {
 export default function CashPaymentButton({
   className = "",
 }: CardPaymentButtonProps) {
-  const { insertedCash, totalDepositedCash, updateInsertedCash } =
-    useVendingMachineState();
+  const {
+    insertedCash,
+    totalDepositedCash,
+    updateInsertedCash,
+    updatePaymentMethod,
+  } = useVendingMachineState();
 
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
@@ -45,6 +49,7 @@ export default function CashPaymentButton({
     // 유효한 화폐 단위인지 확인
     if (CASH_PAYABLE_UNITS.includes(cashAmount as any)) {
       updateInsertedCash(cashAmount);
+      updatePaymentMethod("cash");
     }
   };
 

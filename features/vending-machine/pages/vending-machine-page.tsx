@@ -1,11 +1,12 @@
 import { BEVERAGE } from "@/features/vending-machine/lib/config/vending-config";
 import Image from "next/image";
 import React from "react";
-import BeverageSelectButton from "../components/beverage-select-button";
-import MoneyContainer from "../components/money-container";
-import CashPaymentButton from "../components/cash-payment-button";
-import ExchangeDispatchButton from "../components/exchange-dispatch-button";
-import CardPaymentButton from "../components/card-payment-button";
+import BeverageSelectButton from "@/features/vending-machine/components/beverage-select-button";
+import MoneyContainer from "@/features/vending-machine/components/money-container";
+import CashPaymentButton from "@/features/vending-machine/components/cash-payment-button";
+import ExchangeDispatchButton from "@/features/vending-machine/components/exchange-dispatch-button";
+import CardPaymentButton from "@/features/vending-machine/components/card-payment-button";
+import DrinkExchangeDispatcher from "../components/drink-exchnage-dispatcher";
 
 export default function VendingMachinePage() {
   return (
@@ -47,14 +48,7 @@ export default function VendingMachinePage() {
         </div>
 
         {/* 음료 배출구 + 반환구 */}
-        <div className="flex justify-between gap-2 w-full mt-auto">
-          <button className="bg-gradient-to-b from-zinc-600 to-zinc-700 w-4/5 h-16 rounded-md font-bold text-xl text-center flex justify-center items-center text-white/20">
-            음료 배출구
-          </button>
-          <button className="bg-gradient-to-b from-zinc-600 to-zinc-700 size-8 rounded-md text-xs text-white/20">
-            반환구
-          </button>
-        </div>
+        <DrinkExchangeDispatcher />
       </div>
       <MoneyContainer />
     </>

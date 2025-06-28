@@ -67,6 +67,20 @@ export default function useVendingMachineState() {
     return deposited;
   };
 
+  const resetAll = () => {
+    setVendingMachineState((prev) => ({
+      insertedCash: {
+        100: 0,
+        500: 0,
+        1000: 0,
+        5000: 0,
+        10000: 0,
+      },
+      selectedBeverage: null,
+      paymentMethod: null,
+    }));
+  };
+
   return {
     paymentMethod,
     insertedCash,
@@ -76,5 +90,6 @@ export default function useVendingMachineState() {
     updatePaymentMethod,
     updateInsertedCash,
     resetCash,
+    resetAll,
   };
 }
