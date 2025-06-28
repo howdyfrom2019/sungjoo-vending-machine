@@ -1,5 +1,6 @@
 import { Provider } from "jotai";
 import { Metadata } from "next";
+import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   icons: "/favicon.ico",
