@@ -2,17 +2,23 @@
 
 import type { Beverage } from "@/features/vending-machine/types";
 import { cn } from "@/lib/utils/tailwind-util";
-import { vendingMachineState } from "@/features/vending-machine/lib/state/vending-machine";
-import useVendingMachineState from "../hooks/use-vending-machine-state";
+import useVendingMachineState from "@/features/vending-machine/hooks/use-vending-machine-state";
 
 export default function BeverageSelectButton({
   beverage,
 }: {
   beverage: Beverage;
 }) {
-  const { totalDepositedCash } = useVendingMachineState();
+  const { totalDepositedCash, updateSelectedBeverage, paymentMethod } =
+    useVendingMachineState();
   const disabled = beverage.stock === 0;
   const isEnoughCash = totalDepositedCash >= beverage.price;
+  const isCardPayment = paymentMethod === "card";
+
+  const handleClick = () => {
+    updateSelectedBeverage(beverage);
+  };
+
   return (
     <button
       className={cn([
@@ -20,6 +26,7 @@ export default function BeverageSelectButton({
         "disabled:cursor-not-allowed",
       ])}
       disabled={disabled}
+      onClick={handleClick}
     >
       {disabled ? (
         "품절"
@@ -27,7 +34,7 @@ export default function BeverageSelectButton({
         <span
           className={cn([
             "flex items-center mx-auto bg-zinc-500 size-3 rounded-full",
-            isEnoughCash && "bg-red-400",
+            (isCardPayment || isEnoughCash) && "bg-red-400",
           ])}
         />
       )}

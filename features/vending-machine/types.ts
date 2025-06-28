@@ -25,7 +25,7 @@ export interface Card {
   expirationDate: string; // Date ISO String
 }
 
-export type PaymentMothd = "cash" | "card" | null;
+export type PaymentMethod = "cash" | "card" | null;
 
 export enum VendingStatus {
   IDLE = "IDLE",

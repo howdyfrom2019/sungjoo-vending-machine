@@ -11,11 +11,11 @@ interface CardPaymentButtonProps {
 export default function CashPaymentButton({
   className = "",
 }: CardPaymentButtonProps) {
-  const { updateInsertedCash } = useVendingMachineState();
+  const { insertedCash, totalDepositedCash, updateInsertedCash } =
+    useVendingMachineState();
 
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
-    console.log(e.currentTarget.className);
     e.currentTarget.classList.remove("border-zinc-500", "bg-zinc-500");
     e.currentTarget.classList.add("bg-blue-100", "border-blue-300");
   };
@@ -60,7 +60,9 @@ export default function CashPaymentButton({
       onDrop={handleDrop}
     >
       <p className="text-red-400 font-mono font-bold text-sm tracking-tight">
-        현금투입구
+        {totalDepositedCash === 0
+          ? "현금투입구"
+          : totalDepositedCash.toLocaleString("en-US") + "원"}
       </p>
       <div className="w-full h-3 border-x-2  border-zinc-400 flex flex-col justify-center">
         <div className="w-full h-0.5 bg-zinc-400" />

@@ -4,6 +4,8 @@ import React from "react";
 import BeverageSelectButton from "../components/beverage-select-button";
 import MoneyContainer from "../components/money-container";
 import CashPaymentButton from "../components/cash-payment-button";
+import ExchangeDispatchButton from "../components/exchange-dispatch-button";
+import CardPaymentButton from "../components/card-payment-button";
 
 export default function VendingMachinePage() {
   return (
@@ -38,14 +40,9 @@ export default function VendingMachinePage() {
           <div className="flex items-start gap-2 w-full">
             <div className="flex flex-col gap-2 flex-1">
               <CashPaymentButton />
-              <button
-                className="bg-blue-500 text-white px-2 py-1 rounded-md"
-                disabled
-              >
-                카드 결제
-              </button>
+              <CardPaymentButton />
             </div>
-            <div className="flex-1">반환구</div>
+            <ExchangeDispatchButton />
           </div>
         </div>
 
