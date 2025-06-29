@@ -11,12 +11,8 @@ interface CardPaymentButtonProps {
 export default function CashPaymentButton({
   className = "",
 }: CardPaymentButtonProps) {
-  const {
-    insertedCash,
-    totalDepositedCash,
-    updateInsertedCash,
-    updatePaymentMethod,
-  } = useVendingMachineState();
+  const { totalDepositedCash, updateInsertedCash, updatePaymentMethod } =
+    useVendingMachineState();
 
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();

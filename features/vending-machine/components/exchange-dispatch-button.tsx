@@ -6,8 +6,8 @@ export default function ExchangeDispatchButton() {
   const { totalDepositedCash, resetCash } = useVendingMachineState();
 
   const handleDispatch = () => {
-    const exchange = resetCash();
-    alert(`거스름돈 ${exchange}원 반환`);
+    resetCash();
+    alert(`거스름돈이 반환되었습니다. 반환구를 눌러 확인해주세요.`);
   };
 
   return (
