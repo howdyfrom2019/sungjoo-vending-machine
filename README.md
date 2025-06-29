@@ -163,7 +163,7 @@ $ npx jest
  PASS  __tests__/use-vending-machine-state.test.tsx
 
 Test Suites: 2 passed, 2 total
-Tests:       21 passed, 21 total
+Tests:       17 passed, 17 total
 Snapshots:   0 total
 Time:        1.2 s
 ```
