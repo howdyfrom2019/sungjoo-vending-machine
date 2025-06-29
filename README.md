@@ -1,5 +1,10 @@
 # 🥤 자판기 시뮬레이터
 
+## 📊 매커니즘 도식도
+
+- **다이어그램 보기**: [자판기 다이어그램](./public/diagram-vending-machine.svg)
+- **온라인에서 열람(excalidraw)**: [Excalidraw에서 보기](https://excalidraw.com/#json=6vHuOb3_KaHZGbJFCcecP,RKAQ0Bo-hHxopdALKGgmJQ)
+
 <img src="./public/diagram-vending-machine.svg" alt="자판기 다이어그램" />
 
 ## 📋 프로젝트 개요
